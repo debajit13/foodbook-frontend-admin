@@ -7,7 +7,7 @@ import {
 } from 'flowbite-react';
 import logo from '../../assets/images/foodbook-logo.webp';
 import { useLocation, NavLink } from 'react-router-dom';
-import { useAppSelector, useAppDispatch } from '../../app/hooks';
+import { useAppSelector } from '../../app/hooks';
 
 const routes = [
   {
@@ -27,7 +27,6 @@ const routes = [
 const AppNavbar = () => {
   const location = useLocation();
   const { username, email, isLoggedIn } = useAppSelector((state) => state.auth);
-  const dispatch = useAppDispatch();
 
   return (
     <Navbar fluid rounded>
