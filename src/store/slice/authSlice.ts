@@ -7,14 +7,16 @@ interface AuthState {
   email: string;
   password: string;
   token: string;
+  isLoggedIn: boolean;
 }
 
 // Define the initial state of AuthState
 const initialState: AuthState = {
   username: 'John Doe',
-  email: '',
+  email: 'john@gmail.com',
   password: '',
   token: '',
+  isLoggedIn: true,
 };
 
 export const authSlice = createSlice({
@@ -26,12 +28,14 @@ export const authSlice = createSlice({
       state.email = action.payload.email;
       state.password = action.payload.password;
       state.token = action.payload.token;
+      state.isLoggedIn = true;
     },
     logout: (state) => {
       state.username = '';
       state.email = '';
       state.password = '';
       state.token = '';
+      state.isLoggedIn = false;
     },
   },
 });

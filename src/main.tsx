@@ -4,11 +4,14 @@ import App from './App.tsx';
 import './index.css';
 import store from './store/store.ts';
 import { Provider } from 'react-redux';
+import { Flowbite } from 'flowbite-react';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <Flowbite>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </Flowbite>
   </React.StrictMode>
 );
